@@ -1,7 +1,7 @@
 {
     "name": "p4n",
     "image": "mcr.microsoft.com/devcontainers/base:debian",
-    "workspaceFolder": "/workspaces/hues",
+    "workspaceFolder": "/workspaces/p4n",
     "features": {
         "ghcr.io/devcontainers/features/node:1": {
             "version": "latest"
