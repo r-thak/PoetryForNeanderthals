@@ -1,0 +1,21 @@
+{
+    "name": "p4n",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "workspaceFolder": "/workspaces/hues",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "version": "latest",
+            "enableNonRootDocker": "true",
+            "moby": false
+        },
+        "ghcr.io/devcontainers-extra/features/bun:1": {
+            "version": "latest"
+        }
+    },
+    "postCreateCommand": "cd /workspaces/p4n",
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    "remoteUser": "vscode"
+}
