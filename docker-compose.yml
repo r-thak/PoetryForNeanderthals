@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    ports:
+      - "22222:22222"
+    environment:
+      - ORIGIN=https://poetry.rthak.com
+    restart: unless-stopped
