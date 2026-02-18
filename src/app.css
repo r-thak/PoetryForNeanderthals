@@ -1,0 +1,218 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-cave-bg: #f5f0e8;
+  --color-cave-surface: #fff8ef;
+  --color-cave-brown: #b45309;
+  --color-cave-brown-dark: #8b3e06;
+  --color-bop-red: #dc2626;
+  --color-bop-red-dark: #b91c1c;
+  --color-correct-green: #16a34a;
+  --color-correct-green-dark: #15803d;
+  --color-poet-blue: #2563eb;
+  --color-poet-blue-dark: #1d4ed8;
+  --color-cave-text: #1c1917;
+  --color-cave-muted: #78716c;
+  --color-cave-border: #d6d3d1;
+  --font-family-display: 'Gaegu', system-ui, sans-serif;
+}
+
+html {
+  font-family: var(--font-family-display);
+  background-color: var(--color-cave-bg);
+  color: var(--color-cave-text);
+}
+
+body {
+  min-height: 100dvh;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(180, 83, 9, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(22, 163, 74, 0.03) 0%, transparent 50%);
+}
+
+/* Stone texture BG pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b45309' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Custom button styles */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-family: var(--font-family-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-green {
+  background-color: var(--color-correct-green);
+  color: white;
+}
+.btn-green:hover {
+  background-color: var(--color-correct-green-dark);
+}
+
+.btn-blue {
+  background-color: var(--color-poet-blue);
+  color: white;
+}
+.btn-blue:hover {
+  background-color: var(--color-poet-blue-dark);
+}
+
+.btn-red {
+  background-color: var(--color-bop-red);
+  color: white;
+}
+.btn-red:hover {
+  background-color: var(--color-bop-red-dark);
+}
+
+.btn-brown {
+  background-color: var(--color-cave-brown);
+  color: white;
+}
+.btn-brown:hover {
+  background-color: var(--color-cave-brown-dark);
+}
+
+.btn-gray {
+  background-color: #a8a29e;
+  color: white;
+}
+.btn-gray:hover {
+  background-color: #78716c;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-cave-brown);
+  border: 2px solid var(--color-cave-brown);
+}
+.btn-outline:hover {
+  background-color: var(--color-cave-brown);
+  color: white;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Card component style */
+.game-card {
+  background: var(--color-cave-surface);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 2px solid var(--color-cave-border);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse-red {
+  0%, 100% { color: var(--color-bop-red); }
+  50% { color: #fca5a5; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-pop {
+  animation: pop 0.3s ease-in-out;
+}
+
+.animate-pulse-red {
+  animation: pulse-red 1s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="number"],
+select {
+  font-family: var(--font-family-display);
+  font-size: 1.125rem;
+  padding: 10px 14px;
+  border: 2px solid var(--color-cave-border);
+  border-radius: 10px;
+  background: var(--color-cave-surface);
+  color: var(--color-cave-text);
+  width: 100%;
+  transition: border-color 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-cave-brown);
+}
+
+/* Checkbox styling */
+label {
+  font-family: var(--font-family-display);
+  cursor: pointer;
+}
