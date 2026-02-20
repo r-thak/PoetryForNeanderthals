@@ -8,8 +8,9 @@ let svelteHandler: ((req: Request) => Promise<Response>) | null = null;
 
 async function loadSvelteKit() {
     try {
-        const { handler } = await import('../../build/handler.js');
-        svelteHandler = handler;
+        const { getHandler } = await import('../../build/handler.js');
+        const { fetch } = getHandler();
+        svelteHandler = fetch;
         console.log('SvelteKit handler loaded');
     } catch (e) {
         console.log('SvelteKit handler not available (run `bun run build` first for production)');

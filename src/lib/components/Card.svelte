@@ -12,8 +12,8 @@
   } = $props();
 </script>
 
-<div class="game-card overflow-hidden animate-slide-up">
-  <div class="px-6 py-5 border-b-2 border-cave-border">
+<div class="bg-cave-surface rounded-3xl overflow-hidden shadow-lg border border-cave-border/20 animate-slide-up">
+  <div class="px-6 py-6 border-b border-cave-border/10">
     <div class="flex items-center justify-between mb-1">
       <span class="text-sm font-bold text-cave-muted uppercase tracking-wider">Easy</span>
       <span class="bg-correct-green/15 text-correct-green text-sm font-bold px-3 py-0.5 rounded-full">
@@ -23,7 +23,7 @@
     <p class="text-2xl font-bold text-cave-text">{card.easy}</p>
   </div>
 
-  <div class="px-6 py-5 bg-poet-blue/5">
+  <div class="px-6 py-8 bg-poet-blue/5">
     <div class="flex items-center justify-between mb-1">
       <span class="text-sm font-bold text-cave-muted uppercase tracking-wider">Hard</span>
       <span class="bg-poet-blue/15 text-poet-blue text-sm font-bold px-3 py-0.5 rounded-full">

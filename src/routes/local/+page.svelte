@@ -176,7 +176,7 @@
 </script>
 
 <svelte:head>
-  <title>Local Game — Poetry for Neanderthals</title>
+  <title>Poetry for Neanderthals</title>
 </svelte:head>
 
 <div class="min-h-dvh py-6">
@@ -186,12 +186,12 @@
       <div class="animate-fade-in">
         <div class="flex items-center justify-between mb-6">
           <a href="/" class="text-cave-muted hover:text-cave-brown transition-colors text-2xl">← </a>
-          <h1 class="text-2xl font-bold text-cave-brown">🦴 Local Game Setup</h1>
+          <h1 class="text-2xl font-bold text-cave-brown">Local Game Setup</h1>
           <div class="w-8"></div>
         </div>
 
         <div class="mb-6">
-          <h2 class="text-xl font-bold text-cave-text mb-3">👥 Teams</h2>
+          <h2 class="text-xl font-bold text-cave-text mb-3">Teams</h2>
           <TeamPicker
             teams={$localGame.teams}
             {addPlayer}
@@ -216,7 +216,7 @@
 
     {:else if $localGame.phase === 'interstitial'}
       <div class="min-h-[80dvh] flex flex-col items-center justify-center text-center animate-fade-in">
-        <div class="game-card p-8 max-w-sm w-full">
+        <div class="bg-cave-surface/50 rounded-2xl p-8 max-w-sm w-full shadow-sm">
           <div class="text-6xl mb-4">📱</div>
           <h2 class="text-2xl font-bold text-cave-brown mb-2">{activeTeamName}'s Turn!</h2>
           <p class="text-lg text-cave-text mb-2">
@@ -248,7 +248,7 @@
     {:else if $localGame.phase === 'playing' && $localGame.turn}
       <div class="flex flex-col gap-4 animate-fade-in">
         {#if $localGame.reshuffleNotification}
-          <div class="bg-cave-brown/10 border-2 border-cave-brown/30 rounded-xl p-3 text-center text-cave-brown font-bold animate-slide-up">
+          <div class="bg-cave-brown/10 rounded-xl p-3 text-center text-cave-brown font-bold animate-slide-up shadow-sm">
             🔄 Deck reshuffled!
           </div>
         {/if}
@@ -316,7 +316,7 @@
 
         <Scoreboard teams={$localGame.teams} activeTeamIndex={null} />
 
-        <div class="game-card p-6 text-center">
+        <div class="bg-cave-surface/50 rounded-2xl p-6 text-center shadow-sm">
           {#if winner}
             <p class="text-2xl font-bold text-cave-brown animate-pop">
               🎉 {winner.name} wins!
@@ -331,7 +331,7 @@
           {/if}
         </div>
 
-        <div class="game-card p-5">
+        <div class="bg-cave-surface/50 rounded-2xl p-5 shadow-sm">
           <h2 class="text-xl font-bold text-cave-text mb-3">📋 Game Summary</h2>
           {#each $localGame.turnHistory as turn, i}
             <div class="mb-3 p-3 bg-cave-bg rounded-xl">

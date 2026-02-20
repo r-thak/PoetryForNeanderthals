@@ -40,10 +40,10 @@
 
   function getResultBg(result: string): string {
     switch (result) {
-      case 'easy': return 'bg-correct-green/10 border-correct-green/20';
-      case 'hard': return 'bg-poet-blue/10 border-poet-blue/20';
-      case 'bop': return 'bg-bop-red/10 border-bop-red/20';
-      case 'skip': return 'bg-cave-bg border-cave-border';
+      case 'easy': return 'bg-correct-green/10';
+      case 'hard': return 'bg-poet-blue/10';
+      case 'bop': return 'bg-bop-red/10';
+      case 'skip': return 'bg-cave-bg';
       default: return '';
     }
   }
@@ -69,7 +69,7 @@
     <div class="space-y-2 max-h-[50vh] overflow-y-auto pr-1">
       {#each cards as tc, i}
         <div
-          class="flex items-center gap-3 p-3 rounded-xl border-2 {getResultBg(tc.result)} animate-slide-up"
+          class="flex items-center gap-3 p-3 rounded-xl {getResultBg(tc.result)} shadow-sm animate-slide-up"
           style="animation-delay: {i * 50}ms"
         >
           <div class="flex-1 min-w-0">
@@ -89,7 +89,7 @@
     </div>
   {/if}
 
-  <div class="game-card p-4 mt-4">
+  <div class="bg-cave-surface/50 rounded-2xl p-4 mt-4 shadow-sm">
     <div class="grid grid-cols-3 text-center">
       <div>
         <div class="text-sm text-cave-muted">Gained</div>

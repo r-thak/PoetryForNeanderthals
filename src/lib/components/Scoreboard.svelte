@@ -13,7 +13,7 @@
 <div class="grid grid-cols-2 gap-3" id="scoreboard">
   {#each teams as team, i}
     <div
-      class="game-card p-4 text-center transition-all duration-300 {i === activeTeamIndex ? 'ring-2 ring-cave-brown scale-[1.02]' : ''}"
+      class="bg-cave-surface/50 rounded-2xl p-4 text-center shadow-sm transition-all duration-300 {i === activeTeamIndex ? 'bg-cave-surface border-cave-brown/30 ring-2 ring-cave-brown/20 scale-[1.02]' : 'border-transparent'}"
     >
       <h3 class="text-sm font-bold text-cave-muted uppercase tracking-wider truncate">
         {team.name}

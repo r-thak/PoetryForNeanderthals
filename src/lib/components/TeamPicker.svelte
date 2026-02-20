@@ -49,13 +49,13 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="team-picker">
   {#each teams as team, i}
-    <div class="game-card p-4 border-2 {teamColors[i]}">
+    <div class="p-4 rounded-2xl {teamColors[i].split(' ')[0]} shadow-sm backdrop-blur-sm">
       <div class="flex items-center gap-2 mb-3">
         {#if editingTeamName[i]}
           <input
             type="text"
             bind:value={teamNameInputs[i]}
-            class="flex-1 text-lg font-bold"
+            class="flex-1 text-lg font-bold bg-transparent !border-none focus:ring-0 p-0"
             onblur={() => saveTeamName(i)}
             onkeydown={(e) => e.key === 'Enter' && saveTeamName(i)}
           />
@@ -95,7 +95,7 @@
           placeholder="Player name..."
           bind:value={newPlayerNames[i]}
           onkeydown={(e) => handleKeydown(e, i)}
-          class="flex-1"
+          class="flex-1 bg-white/50 !border-none focus:ring-0 rounded-lg text-sm"
         />
         <button
           class="btn btn-brown !w-auto !min-h-0 px-4 py-2 text-base"

@@ -70,6 +70,7 @@ body::before {
   background-color: var(--color-correct-green);
   color: white;
 }
+
 .btn-green:hover {
   background-color: var(--color-correct-green-dark);
 }
@@ -78,6 +79,7 @@ body::before {
   background-color: var(--color-poet-blue);
   color: white;
 }
+
 .btn-blue:hover {
   background-color: var(--color-poet-blue-dark);
 }
@@ -86,6 +88,7 @@ body::before {
   background-color: var(--color-bop-red);
   color: white;
 }
+
 .btn-red:hover {
   background-color: var(--color-bop-red-dark);
 }
@@ -94,6 +97,7 @@ body::before {
   background-color: var(--color-cave-brown);
   color: white;
 }
+
 .btn-brown:hover {
   background-color: var(--color-cave-brown-dark);
 }
@@ -102,6 +106,7 @@ body::before {
   background-color: #a8a29e;
   color: white;
 }
+
 .btn-gray:hover {
   background-color: #78716c;
 }
@@ -111,6 +116,7 @@ body::before {
   color: var(--color-cave-brown);
   border: 2px solid var(--color-cave-brown);
 }
+
 .btn-outline:hover {
   background-color: var(--color-cave-brown);
   color: white;
@@ -124,13 +130,13 @@ body::before {
 
 /* Card component style */
 .game-card {
-  background: var(--color-cave-surface);
-  border-radius: 16px;
+  background: color-mix(in srgb, var(--color-cave-surface), transparent 50%);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
   box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -2px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  border: 2px solid var(--color-cave-border);
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Container */
@@ -143,30 +149,74 @@ body::before {
 
 /* Animations */
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
-  20%, 40%, 60%, 80% { transform: translateX(4px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-4px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(4px);
+  }
 }
 
 @keyframes pop {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes pulse-red {
-  0%, 100% { color: var(--color-bop-red); }
-  50% { color: #fca5a5; }
+
+  0%,
+  100% {
+    color: var(--color-bop-red);
+  }
+
+  50% {
+    color: #fca5a5;
+  }
 }
 
 @keyframes slide-up {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-shake {
@@ -196,19 +246,18 @@ select {
   font-family: var(--font-family-display);
   font-size: 1.125rem;
   padding: 10px 14px;
-  border: 2px solid var(--color-cave-border);
   border-radius: 10px;
   background: var(--color-cave-surface);
   color: var(--color-cave-text);
   width: 100%;
-  transition: border-color 0.15s ease;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 select:focus {
   outline: none;
-  border-color: var(--color-cave-brown);
 }
 
 /* Checkbox styling */

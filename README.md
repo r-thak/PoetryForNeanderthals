@@ -27,3 +27,12 @@ Run from source using Bun:
    ```
 
 By default, the app will be available at `http://localhost:22222` for both Docker and (production) source deployments.
+
+## Screenshots
+
+<div align="center">
+  <img src="static/screenshots/lobby.png" width="400" alt="Game Lobby" />
+  <img src="static/screenshots/clue-giver.png" width="400" alt="Clue Giver View" />
+  <img src="static/screenshots/bopper.png" width="400" alt="Bopper View" />
+  <img src="static/screenshots/turn-review.png" width="400" alt="Turn Review" />
+</div>

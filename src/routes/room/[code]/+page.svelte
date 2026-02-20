@@ -169,7 +169,7 @@
 </script>
 
 <svelte:head>
-  <title>Room {roomCode} — Poetry for Neanderthals</title>
+  <title>Poetry for Neanderthals</title>
 </svelte:head>
 
 <div class="min-h-dvh py-6">

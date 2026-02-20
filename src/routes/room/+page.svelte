@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Online Room — Poetry for Neanderthals</title>
+  <title>Poetry for Neanderthals</title>
 </svelte:head>
 
 <script lang="ts">
@@ -105,7 +105,7 @@
         </button>
       </div>
     {:else if mode === 'create'}
-      <div class="game-card p-6 space-y-4 animate-slide-up">
+      <div class="bg-cave-surface/50 rounded-2xl p-6 space-y-4 shadow-sm animate-slide-up">
         <h2 class="text-xl font-bold text-cave-text text-center">Create a Room</h2>
         <div>
           <label for="create-name" class="block font-bold text-sm text-cave-muted mb-1">Your Name</label>
@@ -114,6 +114,7 @@
             type="text"
             placeholder="Enter your name..."
             bind:value={playerName}
+            class="border-none focus:ring-0 bg-white/50 rounded-lg"
           />
         </div>
         <label class="flex items-center gap-3 cursor-pointer">
@@ -135,7 +136,7 @@
         </button>
       </div>
     {:else}
-      <div class="game-card p-6 space-y-4 animate-slide-up">
+      <div class="bg-cave-surface/50 rounded-2xl p-6 space-y-4 shadow-sm animate-slide-up">
         <h2 class="text-xl font-bold text-cave-text text-center">Join a Room</h2>
         <div>
           <label for="join-name" class="block font-bold text-sm text-cave-muted mb-1">Your Name</label>
@@ -144,6 +145,7 @@
             type="text"
             placeholder="Enter your name..."
             bind:value={playerName}
+            class="border-none focus:ring-0 bg-white/50 rounded-lg"
           />
         </div>
         <div>
@@ -154,7 +156,7 @@
             placeholder="e.g. GRUG"
             bind:value={roomCode}
             maxlength={4}
-            class="uppercase tracking-widest text-center text-2xl"
+            class="uppercase tracking-widest text-center text-2xl border-none focus:ring-0 bg-white/50 rounded-lg"
           />
         </div>
         {#if error}
