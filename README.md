@@ -10,20 +10,20 @@ Clone of the popular party game "[Poetry for Neanderthals](https://www.exploding
 - Audio processing using the Web Audio API to allow for changing individual user volumes and automatically boosting the current Poet.
 
 ## Setup
-You must have either Bun or NPM installed, and ideally Docker for containerized deployment.
+You must have Docker installed, OR either Bun or NPM installed.
 
 Run using Docker (Recommended):
 ```bash
 docker-compose up --build
 ```
-This will automatically install dependencies, build the SvelteKit UI, and start the server.
 
 Run from source using Bun:
    ```bash
    git clone https://github.com/r-thak/PoetryForNeanderthals
    cd PoetryForNeanderthals
    bun install
-   bun run start  # Automatically builds and starts the server
+   bun run build
+   bun run start
    ```
 
 By default, the app will be available at `http://localhost:22222` for both Docker and (production) source deployments.

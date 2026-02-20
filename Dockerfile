@@ -9,16 +9,13 @@ RUN bun run build
 FROM oven/bun:1
 WORKDIR /app
 
-# Copy the build output
 COPY --from=builder /app/build ./build
-# Copy the server source
 COPY --from=builder /app/src/server ./src/server
-# Copy the lib source since the server imports from it
 COPY --from=builder /app/src/lib ./src/lib
-# Copy config and manifest files
-COPY --from=builder /app/package.json /app/tsconfig.json /app/bun.lock* ./
-# Copy node_modules
+COPY --from=builder /app/package.json /app/bun.lock* ./
 COPY --from=builder /app/node_modules ./node_modules
+
+RUN echo '{"compilerOptions": {"baseUrl": ".", "paths": {"$lib": ["./src/lib"], "$lib/*": ["./src/lib/*"]}, "moduleResolution": "bundler"}}' > tsconfig.json
 
 EXPOSE 22222
 ENV ORIGIN=http://localhost:22222
